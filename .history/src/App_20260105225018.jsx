@@ -1,5 +1,5 @@
 import supabase from './supabase-client'
-import {Routes,Route, Navigate} from "react-router-dom"
+import {Routes,Route} from "react-router-dom"
 
 import Start from './pages/Start'
 import Scenario from './pages/Scenario'
@@ -13,8 +13,6 @@ function App() {
         <Route path="/" element={<Start />}/>
         <Route path="/scenario/:id" element={<Scenario />}/>
         <Route path="/end" element={<End />}/>
-
-        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       </main>
     </>

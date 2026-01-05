@@ -13,8 +13,6 @@ function App() {
         <Route path="/" element={<Start />}/>
         <Route path="/scenario/:id" element={<Scenario />}/>
         <Route path="/end" element={<End />}/>
-
-        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       </main>
     </>

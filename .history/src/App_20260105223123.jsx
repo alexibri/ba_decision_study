@@ -1,11 +1,12 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 import supabase from './supabase-client'
-import {Routes,Route, Navigate} from "react-router-dom"
 
-import Start from './pages/Start'
-import Scenario from './pages/Scenario'
-import End from './pages/End'
 
 function App() {
+ 
   return (
     <>
       <main className="main-content">
@@ -13,8 +14,6 @@ function App() {
         <Route path="/" element={<Start />}/>
         <Route path="/scenario/:id" element={<Scenario />}/>
         <Route path="/end" element={<End />}/>
-
-        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       </main>
     </>
