@@ -9,15 +9,15 @@ function App() {
 
   const onClickTest = () => {
     console.log(import.meta.env.VITE_SUPABASE_URL);
-    console.log(import.meta.env.VITE_SUPABASE_ANON_KEY);
-    console.log("Heyyyy")
+console.log(import.meta.env.VITE_SUPABASE_ANON_KEY);
+
   }
 
   
   return (
     <>
       <div>
-        <button onClick={onClickTest}>Click</button>
+        <input onClick={}></input>
       </div>
     </>
   )
