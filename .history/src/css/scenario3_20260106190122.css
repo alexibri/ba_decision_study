@@ -1,0 +1,140 @@
+* { box-sizing: border-box; }
+
+.s1screen{
+  min-height: 100vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  padding: 18px 14px;
+}
+
+.s1card{
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 26px;
+  padding: 18px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.s1card h1{
+  margin: 6px 0 4px;
+  text-align: center;
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.innerCard{
+  background: #efefef;
+  border-radius: 28px;
+  padding: 18px 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 72vh;
+}
+
+.s1cardHeader{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 6px;
+  font-weight: 800;
+}
+
+.s1cardHeader:first-child svg{
+  background: #ddd;
+  border-radius: 999px;
+  padding: 10px;
+  width: 56px;
+  height: 56px;
+}
+
+.s1cardHeader h2{
+  margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.s1cardHeader p{
+  display: none; 
+}
+
+.accountRow{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.accountRow .label{
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.accountRow .value{
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.infoBlock{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 900;
+}
+
+.infoBlock .label{
+  font-size: 20px;
+}
+
+.infoBlock .value{
+  font-size: 22px;
+}
+
+.s1button{
+  margin-top: auto;
+  display: flex;
+  flex-direction:row;
+  gap: 12px;
+}
+
+.s1button button{
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 18px;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.btnSecondary{
+  background: #6f6f6f;
+  color: #fff;
+}
+
+.s1accept{
+  background: #35d05e;
+  color: #0b0b0b;
+  box-shadow: 0 10px 18px rgba(53, 208, 94, 0.28);
+}
+
+.s1accept:active,
+.btnSecondary:active{
+  transform: translateY(1px);
+}
+
+.popUp{
+    background: #6f6f6f;
+    flex: 1;
+    border-radius: 26px;
+}
+
+@media (min-width: 900px){
+  .s1screen{ padding: 40px 16px; }
+  .innerCard{ min-height: 640px; }
+}

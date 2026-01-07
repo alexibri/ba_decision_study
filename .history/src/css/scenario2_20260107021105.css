@@ -1,0 +1,144 @@
+* { box-sizing: border-box; }
+
+.s2screen{
+  min-height: 100vh;
+  outline: 10px solid black;
+  background: #000000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;    
+}
+
+.s2screen h1{
+  width: 100%;
+  max-width: 420px;       
+  margin: 10px 0 0;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.s2card{
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 26px;
+  padding: 18px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.s2cardInner{
+  width: 100%;
+  background: #35d05e;
+  display: flex;
+}
+
+.s2cardHeader{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3%;
+  padding-top: 5%;
+  font-weight:bold;
+}
+
+.s2cardStack {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 10%;
+    align-items: center;
+}   
+
+.s2subtitle{
+  margin: 0;
+  font-size: 10px;
+}
+.s2transitionSubtitle{
+  font-size: 40px;
+}
+
+.s2button{
+  display: flex;
+  justify-content: center;
+  padding: ;
+}
+
+.s2accept{
+  width: 70%;
+  max-width: 260px;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 16px;
+  background: #35d05e;
+  color: #0b0b0b;
+  font-size: 22px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 10px 18px rgba(53, 208, 94, 0.35);
+}
+
+.s2accept:active{
+  transform: translateY(1px);
+}
+
+.s2scroll{
+  flex: 1;             
+  overflow: auto;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #2c2c2c;
+  padding-right: 6px;
+}
+
+.s2scroll::-webkit-scrollbar{ width: 8px; }
+.s2scroll::-webkit-scrollbar-thumb{ background:#cfcfcf; border-radius:999px; }
+.s2scroll::-webkit-scrollbar-track{ background: transparent; }
+
+.s2buttons{
+  display: flex;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.s2decline{
+  align-self: flex-start;
+  border: none;
+  background: transparent;   
+  color: #4b4b4b;
+  font-size: 9px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 8px;
+  opacity: 0.85;         
+}
+
+.s2accept:focus-visible,
+.s2termsAndConditions:focus-visible,
+.s2decline:focus-visible{
+  outline: 3px solid rgba(0,0,0,0.35);
+  outline-offset: 3px;
+}
+
+@media (min-width: 900px){
+  .s2screen{
+    padding: 40px 16px;
+  }
+  .s2card{
+    min-height: 640px;   
+  }
+}
+
+.fade-in{
+  animation: fadeIn 440ms ease-out both;
+}
+
+@keyframes fadeIn{
+  from{
+    transform: translateY(1px);
+  }
+  to{
+    transform: translateY(0);
+  }
+}
