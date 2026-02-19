@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+}
+
+.startScreen {
+  min-height: 100vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  padding: 18px 14px;
+
+  justify-content: flex-start;         
+  padding-top: var(--screen-top);
+}
+
+.startCard {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 26px;
+  padding: 18px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.startCard h1 {
+  margin: 6px 0 4px;
+  text-align: center;
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.startPopUpButton {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  padding: 1%;
+  align-items: center;
+  justify-content: center;
+}
+
+.startButton {
+  display: flex;
+  justify-content: center;
+}
+
+.startAccept {
+  width: 90%;
+  height: 90%;
+  max-width: 250px;
+  padding: 8px 10px;
+  border: 2px solid #1f8f3e; 
+  border-radius: 16px;
+  background: #35d05e;
+  color: #0b0b0b;
+  font-size: 16px;
+  font-weight: 900;
+  box-shadow: 0 1px 1px rgba(21, 87, 36, 0.851);
+  cursor: pointer;
+}
+
+.startccept:active,
+.btnSecondary:active {
+  transform: translateY(1px);
+}
+
+.popUp {
+  background: lightgray;
+  flex: 1;
+  border-radius: 26px;
+  padding: 5%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+}
+
+@media (min-width: 900px) {
+  .s1screen {
+    padding: 40px 16px;
+  }
+
+  .innerCard {
+    min-height: 640px;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 440ms ease-out both;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(1px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
