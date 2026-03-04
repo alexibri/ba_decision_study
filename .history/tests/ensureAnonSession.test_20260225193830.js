@@ -1,0 +1,11 @@
+import { describe, it, expect, vi, beforeEach } from "vitest";
+
+const getSessionMock = vi.hoisted(() => vi.fn())
+const signInAnonyouslyMock = vi.hoisted(() => vi.fn())
+
+vi.mock("../src/lib/db/supabase-client", () => ({
+    default: {
+        auth: { getUser: authGetUserMock, signInAnonymously: si },
+    }
+}))
+
