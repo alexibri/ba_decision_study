@@ -64,8 +64,6 @@
 
 .s2transitionSubtitle {
   font-size: 40px;
-  display: flex;            
-  justify-content: center; 
 }
 
 .s2button {
@@ -76,7 +74,7 @@
 .s2decision {
   width: 98%;          
   max-width: 220px;
-  padding: 12px 16px;  
+  padding: 12px 16px;   /* statt 8px 10px – gleich wie s1accept */
   border: 2px solid #1f8f3e;
   border-radius: 20px;
   background: #35d05e;
@@ -85,8 +83,8 @@
   font-weight: 900;
   box-shadow: 0 1px 1px rgba(21, 87, 36, 0.851);
   cursor: pointer;
-  display: flex;        
-  justify-content: center; 
+  display: flex;         /* neu */
+  justify-content: center; /* neu */
 }
 
 .s2decision:hover {

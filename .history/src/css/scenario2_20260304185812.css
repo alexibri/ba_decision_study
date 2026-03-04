@@ -65,7 +65,7 @@
 .s2transitionSubtitle {
   font-size: 40px;
   display: flex;            
-  justify-content: center; 
+  justify-content: center;  /* neu */
 }
 
 .s2button {

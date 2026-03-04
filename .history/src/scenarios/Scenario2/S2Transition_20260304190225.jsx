@@ -1,4 +1,4 @@
-import "../../css/transition.css"
+import "../../css/scenario2.css"
 import { useNavigate } from "react-router-dom";
 
 export default function S2Transition() {
@@ -7,7 +7,7 @@ export default function S2Transition() {
     return <div className="transitionScreen fade-in">
         <div className="transitionCard">
             <h1 className="transitionSubtitle">Third Part</h1>
-            <button className="transitionButton" onClick={() => navigate("/scenario/3/step/1", { replace: true })}>
+            <button className="s2decision" onClick={() => navigate("/scenario/3/step/1", { replace: true })}>
                 Continue
             </button>
         </div>

@@ -1,4 +1,4 @@
-import "../../css/transition.css"
+import "../../css/scenario2.css"
 import { useNavigate } from "react-router-dom";
 
 export default function S2Transition() {
