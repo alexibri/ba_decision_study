@@ -8,7 +8,7 @@ export function calcReactionTimeMs(start, now) {
     return Math.round(now - start)
 }
 
-export async function sendResponsePayload(currentRunID, currentScreenID, currentSelectedChoice, currentReactionTimeMs) {
+export async function sendResponsePayload(currentRunID, currentScreenID, currentSelectedChoice, currentReationTimeMs) {
     const response = await createResponse(
         {
             runID: currentRunID,

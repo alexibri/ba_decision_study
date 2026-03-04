@@ -36,7 +36,7 @@ describe("responses.createResponse", () => {
         expect(res).toEqual({ approved: true})
     })
 
-    it("returns approved:true on error", async () => {
+    it("returns approved:true and duplicate:true when error.code is 23505", async () => {
         insertMock.mockResolvedValueOnce({ error: { message: "fail" } })
 
         const res = await createResponse({
@@ -45,6 +45,6 @@ describe("responses.createResponse", () => {
             selectedChoice: "accept_all",
             reactionTimeMs: 100
         })
-        expect(res).toEqual({ approved: false})
+        expect(res).toEqual({ approved: true})
     })
 })

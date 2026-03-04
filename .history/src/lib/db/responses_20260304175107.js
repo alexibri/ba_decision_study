@@ -13,6 +13,11 @@ export async function createResponse({ runID, screenID, selectedChoice, reaction
         .from("response")
         .insert(newResponseData)
 
-    if (error) return {approved: false};
-    return { approved: true}
+    const error = await supabase
+    if (error) {
+        if(error.code === duplicateResponseErrorCode) return {approved: true, duplicate:true}
+        console.log("Error creating response ", error);
+        return {approved: false};
+    }
+    return { approved: true, duplicate:false}
 };

@@ -14,5 +14,5 @@ export async function createResponse({ runID, screenID, selectedChoice, reaction
         .insert(newResponseData)
 
     if (error) return {approved: false};
-    return { approved: true}
+    return { approved: true, duplicate:false}
 };

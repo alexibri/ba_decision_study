@@ -8,13 +8,13 @@ export function calcReactionTimeMs(start, now) {
     return Math.round(now - start)
 }
 
-export async function sendResponsePayload(currentRunID, currentScreenID, currentSelectedChoice, currentReactionTimeMs) {
+export async function sendResponsePayload(currentRunID, currentScreenID, currentSelectedChoice, c) {
     const response = await createResponse(
         {
             runID: currentRunID,
             screenID: currentScreenID,
             selectedChoice: currentSelectedChoice,
-            reactionTimeMs: currentReactionTimeMs
+            reactionTimeMs: c
         });
     return Boolean(response?.approved)
 }
@@ -37,7 +37,7 @@ export function useResponseTracker(screenID) {
                 setLoading(false)
                 return false
             }
-            const currentReactionTimeMs = calcReactionTimeMs(startTimeRef.current, performance.now())
+            const c = calcReactionTimeMs(startTimeRef.current, performance.now())
             let approved = false
             try {
                 approved = await sendResponsePayload(runID, screenID, choice, currentReactionTimeMs)

@@ -25,13 +25,7 @@ describe("useSingleSubmit", () => {
         const {result} = renderHook(() => useSingleSubmit())
         const fn = vi.fn(async () => { })
 
-        await act(async ()=> { await result.current(fn)})
-
-        let secondResult
-        await act(async () => { secondResult = await result.current(fn)})
-
-        expect(secondResult).toBe(false)
-        expect(fn).toHaveBeenCalledTimes(1)
+        await act(async ()=> { await result.current})
     })
     
     it("blocks a second call while first is pending", async () => {

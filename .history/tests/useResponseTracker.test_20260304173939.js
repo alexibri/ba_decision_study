@@ -21,7 +21,7 @@ import { getValidRunId } from '../src/lib/guards/localRunId';
 beforeEach(() => {
     vi.clearAllMocks()
     getValidRunId.mockReturnValue("1")
-    createResponse.mockResolvedValue({ approved: true})
+    createResponse.mockResolvedValue({ approved: true, duplicate: false })
 
     vi.spyOn(performance, "now").mockReturnValue(1000)
 })
