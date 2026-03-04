@@ -48,6 +48,7 @@ describe("Start.startWithDesign", () => {
         })
 
         expect(localStorage.getItem("run_id")).toBe("2")
+        expect(setGroupMock).toHaveBeenCalledWith("nudge")
         expect(navigateMock).toHaveBeenCalledWith("/scenario/1/step/1", { replace: true})
     })
 })

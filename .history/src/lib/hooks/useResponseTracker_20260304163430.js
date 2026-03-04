@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { createResponse } from "../../lib/db/responses";
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import { getValidRunId } from "../guards/localRunId";
 import { useSingleSubmit } from "./useSingleSubmit";
 
@@ -24,10 +24,6 @@ export function useResponseTracker(screenID) {
     const navigate = useNavigate()
     const runOnce = useSingleSubmit()
     const [loading, setLoading] = useState(false)
-
-    useEffect( ()=> {
-        startTimeRef.current = performance.now()
-    }, [])
 
     const handleChoice = async (choice, navigateTo) => {
         return await runOnce(async () => {

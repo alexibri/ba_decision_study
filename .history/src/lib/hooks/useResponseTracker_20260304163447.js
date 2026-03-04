@@ -25,9 +25,7 @@ export function useResponseTracker(screenID) {
     const runOnce = useSingleSubmit()
     const [loading, setLoading] = useState(false)
 
-    useEffect( ()=> {
-        startTimeRef.current = performance.now()
-    }, [])
+    useEffect
 
     const handleChoice = async (choice, navigateTo) => {
         return await runOnce(async () => {
