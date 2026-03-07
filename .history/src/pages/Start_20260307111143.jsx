@@ -46,8 +46,7 @@ export default function Start() {
                         Please go through each screen the way you normally would. 
                         <br />
                         There are no right or wrong answers.
-                        <br /> 
-                        <br />
+                        <br /> <br />
                         The study takes approximately 1-2 minutes. Your data will be stored anonymously and used solely for research purposes.
                     </h3>
                     <div className="stack">

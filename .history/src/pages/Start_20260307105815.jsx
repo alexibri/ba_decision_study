@@ -41,15 +41,9 @@ export default function Start() {
         <div className="start fade-in">
             <div className="startScreen">
                 <div className="startCard">
-                    <h1>Study</h1>
-                    <h3>
-                        Please go through each screen the way you normally would. 
-                        <br />
-                        There are no right or wrong answers.
-                        <br /> 
-                        <br />
-                        The study takes approximately 1-2 minutes. Your data will be stored anonymously and used solely for research purposes.
-                    </h3>
+                    <h1>Study on the Influence of Design </h1>
+                    <h3>Please go through each screen the way you normally would.</h3>
+                    <h3>There are no right or wrong answers.</h3>
                     <div className="stack">
                         <div className="startPopUpButton">
                             <button className="startStudyButton" disabled={loading} onClick={() => startWithDesign({ currentDesignStrategy:DESIGN_STRATEGY, groupName:STUDY_GROUP })}>

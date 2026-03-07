@@ -41,14 +41,12 @@ export default function Start() {
         <div className="start fade-in">
             <div className="startScreen">
                 <div className="startCard">
-                    <h1>Study</h1>
-                    <h3>
-                        Please go through each screen the way you normally would. 
+                    <h1>Study on the Influence of <br /> Design Elements</h1>
+                    <h3>Please go through each screen the way you normally would. 
                         <br />
                         There are no right or wrong answers.
-                        <br /> 
                         <br />
-                        The study takes approximately 1-2 minutes. Your data will be stored anonymously and used solely for research purposes.
+                        <h3>The study takes approximately 5 minutes. Your data will be stored anonymously and used solely for research purposes.
                     </h3>
                     <div className="stack">
                         <div className="startPopUpButton">
