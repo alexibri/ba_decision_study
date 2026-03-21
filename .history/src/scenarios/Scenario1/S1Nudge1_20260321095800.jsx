@@ -33,6 +33,10 @@ export default function S1Nudge1() {
                 </button>
             </div>
 
+            <p>
+                You can change your preferences later.
+            </p>
+
             <div className="s1scroll">
                 <h3>Cookie Information</h3>
 

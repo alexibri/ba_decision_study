@@ -15,6 +15,11 @@ export default function S1Nudge1() {
                 <h2 className="s1subtitle">For legal reasons</h2>
             </div>
 
+            <p>
+                <strong>Essential cookies (required)</strong> <br />
+                These keep you logged in, remember your cart, and ensure a secure connection. They do NOT track you across sites.
+            </p>
+
             <div className="s1button">
                 <button className="s1accept" disabled={loading} onClick={() => { handleChoice("accept_essential", { to: "/scenario/1/step/2", replace: true }) }}>
                     Accept essential (Recommended)
@@ -32,6 +37,10 @@ export default function S1Nudge1() {
                     Accept all cookies
                 </button>
             </div>
+
+            <p>
+                You can change your preferences later in Settings.
+            </p>
 
             <div className="s1scroll">
                 <h3>Cookie Information</h3>
