@@ -5,9 +5,8 @@ DROP TABLE IF EXISTS design_strategy CASCADE;
 
 CREATE TABLE IF NOT EXISTS design_strategy (
     design_strategy_id SERIAL,
-    design_strategy_name VARCHAR(100) NOT NULL,
-    CONSTRAINT pk_design_strategy_id PRIMARY KEY (design_strategy_id),
-    CONSTRAINT uk_design_strategy_name UNIQUE (design_strategy_name)
+    design_strategy_name VARCHAR(100) NOT NULL UNIQUE,
+    CONSTRAINT pk_design_strategy_id PRIMARY KEY (design_strategy_id)
 );
 
 CREATE TABLE IF NOT EXISTS screen (
@@ -20,22 +19,22 @@ CREATE TABLE IF NOT EXISTS run (
     run_id SERIAL,
     run_start_at TIMESTAMPTZ NOT NULL DEFAULT now(),
     run_end_at TIMESTAMPTZ,
-    run_status VARCHAR(40) NOT NULL DEFAULT 'started',
+    run_status VARCHAR(40) NOT NULL DEFAULT 'started' CHECK (
+        LOWER(run_status) IN (
+            'started',
+            'finished'
+        )
+    ),
     user_id UUID NOT NULL,
     design_strategy_id INT NOT NULL,
     CONSTRAINT pk_run_id PRIMARY KEY (run_id),
     CONSTRAINT fk_run_auth_user_id FOREIGN KEY (user_id) REFERENCES auth.users (id),
-    CONSTRAINT fk_run_design_strategy_id FOREIGN KEY (design_strategy_id) REFERENCES design_strategy (design_strategy_id),
-    CONSTRAINT ck_run_status CHECK (
-        LOWER(run_status) IN (
-            'started',
-            'finished'
-        ))
+    CONSTRAINT fk_run_design_strategy_id FOREIGN KEY (design_strategy_id) REFERENCES design_strategy (design_strategy_id)
 );
 
 CREATE TABLE IF NOT EXISTS response (
     response_id SERIAL,
-    response_reaction_time_ms INT,
+    response_reaction_time_ms INT CHECK (response_reaction_time_ms >= 0),
     response_submitted_at TIMESTAMPTZ NOT NULL DEFAULT now(),
     response_selected_choice VARCHAR(100),
     run_id INT NOT NULL,
@@ -44,7 +43,7 @@ CREATE TABLE IF NOT EXISTS response (
     CONSTRAINT fk_response_run_id FOREIGN KEY (run_id) REFERENCES run (run_id) ON DELETE CASCADE,
     CONSTRAINT fk_response_screen_id FOREIGN KEY (screen_id) REFERENCES screen (screen_id),
     CONSTRAINT uk_response_run_screen_id UNIQUE (run_id, screen_id),
-    CONSTRAINT ck_response_reaction_time_ms CHECK (response_reaction_time_ms >= 0)
+    CONSTRAINT ck_response_
 );
 
 CREATE INDEX idx_response_run ON response (run_id);

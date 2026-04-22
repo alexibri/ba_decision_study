@@ -5,9 +5,9 @@ DROP TABLE IF EXISTS design_strategy CASCADE;
 
 CREATE TABLE IF NOT EXISTS design_strategy (
     design_strategy_id SERIAL,
-    design_strategy_name VARCHAR(100) NOT NULL,
-    CONSTRAINT pk_design_strategy_id PRIMARY KEY (design_strategy_id),
-    CONSTRAINT uk_design_strategy_name UNIQUE (design_strategy_name)
+    design_strategy_name VARCHAR(100) NOT NULL UNIQUE,
+    CONSTRAINT pk_design_strategy_id PRIMARY KEY (design_strategy_id)
+    CONSTRAINT uk_design_strategy_name
 );
 
 CREATE TABLE IF NOT EXISTS screen (
