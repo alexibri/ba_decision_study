@@ -1,5 +1,6 @@
 import "../css/start.css"
 import { useNavigate } from "react-router-dom"
+import { setGroup } from "../lib/assignment/group"
 import { createRun } from "../lib/db/runs"
 import { ensureAnonSession } from "../lib/auth/ensureAnonSession"
 import { useSingleSubmit } from "../lib/hooks/useSingleSubmit"
@@ -29,6 +30,7 @@ export default function Start() {
             }
             localStorage.setItem("run_id", String(run.run_id))
             localStorage.setItem("study_group", groupName)
+
             navigate("/scenario/1/step/1", { replace: true })
         })
     }

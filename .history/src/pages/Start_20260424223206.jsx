@@ -29,6 +29,7 @@ export default function Start() {
             }
             localStorage.setItem("run_id", String(run.run_id))
             localStorage.setItem("study_group", groupName)
+
             navigate("/scenario/1/step/1", { replace: true })
         })
     }
