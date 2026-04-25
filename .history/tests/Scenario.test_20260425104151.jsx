@@ -34,7 +34,7 @@ beforeEach(() => {
 describe("Scenario", () => {
 
     it("renders scenario component if run is active", async () => {
-        localStorage.setItem("study_group","dark")
+        getGroupMock.mockReturnValue("dark")
         localStorage.setItem("run_id", "2")
 
         getRunByIdMock.mockResolvedValueOnce({
@@ -49,7 +49,23 @@ describe("Scenario", () => {
     })
 
     it("redirects to /end if run_id is missing", async () => {
-        localStorage.setItem("study_group","dark")
+        getGroupMock.mockReturnValue("dark")
+
+        render(<Scenario />)
+
+        await waitFor(() => {
+            expect(navigateMock).toHaveBeenCalledWith("/end", { replace: true })
+        })
+    })
+
+    it("redirects to /end if run is not active", async () => {
+        getGroupMock.mockReturnValue("dark")
+        localStorage.setItem("run_id", "2")
+
+        getRunByIdMock.mockResolvedValueOnce({
+            run_status: "finished",
+            run_end_at: "2026-01-01"
+        })
 
         render(<Scenario />)
 

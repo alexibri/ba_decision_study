@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom"
 import React, { useEffect } from "react"
+import { getRunById } from "../lib/db/runs"
 
 import S1Dark1 from "../scenarios/Scenario1/S1Dark1"
 import S1Nudge1 from "../scenarios/Scenario1/S1Nudge1"
@@ -15,7 +16,7 @@ import S3Dark2 from "../scenarios/Scenario3/S3Dark2"
 import S3Nudge2 from "../scenarios/Scenario3/S3Nudge2"
 
 export default function Scenario() {
-    const group = localStorage.getItem("study_group")
+    
     const { sid, stepid } = useParams()
     const navigate = useNavigate()
 

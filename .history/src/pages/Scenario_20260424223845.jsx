@@ -1,5 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom"
+import { getGroup } from "../lib/assignment/group"
 import React, { useEffect } from "react"
+import { getRunById } from "../lib/db/runs"
 
 import S1Dark1 from "../scenarios/Scenario1/S1Dark1"
 import S1Nudge1 from "../scenarios/Scenario1/S1Nudge1"
@@ -15,7 +17,7 @@ import S3Dark2 from "../scenarios/Scenario3/S3Dark2"
 import S3Nudge2 from "../scenarios/Scenario3/S3Nudge2"
 
 export default function Scenario() {
-    const group = localStorage.getItem("study_group")
+    const group = getGroup()
     const { sid, stepid } = useParams()
     const navigate = useNavigate()
 
@@ -35,6 +37,11 @@ export default function Scenario() {
             if (!runID) {
                 navigate("/end", { replace: true })
                 return
+            }
+            const run = await getRunById(runID)
+            const isStarted = run && (run.run_status ?? "").toLowerCase() === "started" && run.run_end_at == null
+            if (!isStarted) {
+                navigate("/end", { replace: true })
             }
         }
         guard();

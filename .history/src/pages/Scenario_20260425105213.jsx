@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom"
 import React, { useEffect } from "react"
+import { getRunById } from "../lib/db/runs"
 
 import S1Dark1 from "../scenarios/Scenario1/S1Dark1"
 import S1Nudge1 from "../scenarios/Scenario1/S1Nudge1"
