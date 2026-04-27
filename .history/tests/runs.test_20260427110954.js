@@ -47,9 +47,10 @@ beforeEach(() => {
 
 describe("runs.createRun", () => {
     it("inserts payload and returns run_id", async () => {
+        authGetUserMock.mockResolvedValueOnce({ data: { user: { id: "user_test" } }, error: null })
         builder.single.mockResolvedValueOnce({ data: { run_id: 1 }, error: null })
 
-        const response = await createRun({ runStatus: "started", designStrategy: 1, userID: "user_test"})
+        const response = await createRun({ runStatus: "started", designStrategy: 1, userID: })
 
         expect(fromMock).toHaveBeenCalledWith("run")
         expect(builder.insert).toHaveBeenCalledTimes(1)
@@ -67,9 +68,10 @@ describe("runs.createRun", () => {
     })
 
     it("returns null on insert error", async () => {
+        authGetUserMock.mockResolvedValueOnce({ data: { user: { id: "user_test" } }, error: null, })
         builder.single.mockResolvedValueOnce({ data: null, error: { message: "fail" } })
 
-        const response = await createRun({ runStatus: "started", designStrategy: 1, userID: "user_test" })
+        const response = await createRun({ runStatus: "started", designStrategy: 1 })
 
         expect(response).toBeNull()
     })

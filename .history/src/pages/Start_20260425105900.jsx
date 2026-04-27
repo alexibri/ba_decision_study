@@ -22,7 +22,7 @@ export default function Start() {
                 setLoading(false)
                 return
             }
-            const run = await createRun({ runStatus: "started", designStrategy: currentDesignStrategy, userID: session.user.id });
+            const run = await createRun({ runStatus: "started", designStrategy: currentDesignStrategy });
             if (!run?.run_id) {
                 setLoading(false)
                 return

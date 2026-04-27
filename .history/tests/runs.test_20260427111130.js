@@ -67,6 +67,7 @@ describe("runs.createRun", () => {
     })
 
     it("returns null on insert error", async () => {
+        authGetUserMock.mockResolvedValueOnce({ data: { user: { id: "user_test" } }, error: null, })
         builder.single.mockResolvedValueOnce({ data: null, error: { message: "fail" } })
 
         const response = await createRun({ runStatus: "started", designStrategy: 1, userID: "user_test" })

@@ -23,10 +23,12 @@ const builder = vi.hoisted(() => {
     return build
 })
 
+const authGetUserMock = vi.hoisted(() => vi.fn())
 const fromMock = vi.hoisted(() => vi.fn(() => builder))
 
 vi.mock("../src/lib/db/supabase-client", () => ({
     default: {
+        auth: { getUser: authGetUserMock },
         from: fromMock
     }
 }))
@@ -46,10 +48,21 @@ beforeEach(() => {
 })
 
 describe("runs.createRun", () => {
+
+    it("return null if no user session exists", async () => {
+        authGetUserMock.mockResolvedValueOnce({ data: { user: null }, error: null })
+
+        const response = await createRun({ runStatus: "started", designStrategy: 1 })
+
+        expect(response).toBeNull()
+        expect(fromMock).not.toHaveBeenCalled()
+    })
+
     it("inserts payload and returns run_id", async () => {
+        authGetUserMock.mockResolvedValueOnce({ data: { user: { id: "user_test" } }, error: null })
         builder.single.mockResolvedValueOnce({ data: { run_id: 1 }, error: null })
 
-        const response = await createRun({ runStatus: "started", designStrategy: 1, userID: "user_test"})
+        const response = await createRun({ runStatus: "started", designStrategy: 1, userID: })
 
         expect(fromMock).toHaveBeenCalledWith("run")
         expect(builder.insert).toHaveBeenCalledTimes(1)
@@ -67,9 +80,10 @@ describe("runs.createRun", () => {
     })
 
     it("returns null on insert error", async () => {
+        authGetUserMock.mockResolvedValueOnce({ data: { user: { id: "user_test" } }, error: null, })
         builder.single.mockResolvedValueOnce({ data: null, error: { message: "fail" } })
 
-        const response = await createRun({ runStatus: "started", designStrategy: 1, userID: "user_test" })
+        const response = await createRun({ runStatus: "started", designStrategy: 1 })
 
         expect(response).toBeNull()
     })

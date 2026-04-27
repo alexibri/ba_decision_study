@@ -9,9 +9,11 @@ const getUserData = async () => {
     return user
 }
 
-export async function createRun({ runStatus, designStrategy, userID }) {
+export async function createRun({ runStatus, designStrategy, user }) {
+    const userData = await getUserData()
+    if (!userData) return null
     const newRunData = {
-        user_id: userID,
+        user_id: userData.id,
         run_status: runStatus,
         design_strategy_id: designStrategy,
     }
