@@ -89,7 +89,6 @@ UPDATE TO authenticated USING (user_id = auth.uid ())
 WITH
     CHECK (user_id = auth.uid ());
 
-
 INSERT INTO
     design_strategy (design_strategy_name)
 VALUES ('Dark Pattern'),

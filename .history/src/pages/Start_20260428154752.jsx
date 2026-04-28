@@ -19,12 +19,12 @@ export default function Start() {
             setLoading(true)
             const session = await ensureAnonSession()
             if (!session?.user) {
-                setLoading(false)
+                navigate("/end")
                 return
             }
             const run = await createRun({ runStatus: "started", designStrategy: currentDesignStrategy, userID: session.user.id });
             if (!run?.run_id) {
-                navigate("/end", {replace: true})
+                setLoading(false)
                 return
             }
             localStorage.setItem("run_id", String(run.run_id))

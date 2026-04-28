@@ -24,7 +24,7 @@ export default function Start() {
             }
             const run = await createRun({ runStatus: "started", designStrategy: currentDesignStrategy, userID: session.user.id });
             if (!run?.run_id) {
-                navigate("/end", {replace: true})
+                setLoading(false)
                 return
             }
             localStorage.setItem("run_id", String(run.run_id))

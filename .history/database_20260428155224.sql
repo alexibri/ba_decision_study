@@ -57,8 +57,11 @@ CREATE INDEX idx_response_screen ON response (screen_id);
 CREATE INDEX idx_run_design_strategy ON run (design_strategy_id);
 
 ALTER TABLE run ENABLE ROW LEVEL SECURITY;
+
 ALTER TABLE response ENABLE ROW LEVEL SECURITY;
+
 ALTER TABLE design_strategy ENABLE ROW LEVEL SECURITY;
+
 ALTER TABLE screen ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Users can insert runs" ON run FOR
@@ -88,7 +91,6 @@ CREATE POLICY "Users can update own runs" ON run FOR
 UPDATE TO authenticated USING (user_id = auth.uid ())
 WITH
     CHECK (user_id = auth.uid ());
-
 
 INSERT INTO
     design_strategy (design_strategy_name)
