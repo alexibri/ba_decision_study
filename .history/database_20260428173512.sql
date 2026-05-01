@@ -2,9 +2,12 @@
 /*
 **
 Datei:          database.sql
-Projekt:        Bachelorarbeit
-Beschreibung:   Skript für eine Datenbank. Die echte Datanbank befindet sich auf der "Supabase" Plattform. Diese dient zur Referenz.
-Autor:          Alexander Benedikt Breitner
+Projekt:        Bachelorarb
+Beschreibung:   Skript für eine Datenbank, die sich auf die Fußball-EM bezieht.
+Autor:          Gruppe 03 (Sophia, Jacek, Alex, Karim)
+Initiales Datum:       11.06.2024
+Letzte Änderung:    01.07.2024 - Korrekturen
+Version:        1.6
 **
 */
 

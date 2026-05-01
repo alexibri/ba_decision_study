@@ -3,8 +3,11 @@
 **
 Datei:          database.sql
 Projekt:        Bachelorarbeit
-Beschreibung:   Skript für eine Datenbank. Die echte Datanbank befindet sich auf der "Supabase" Plattform. Diese dient zur Referenz.
+Beschreibung:   Skript für eine Datenbank. Die echte Datanbank befindet sich auf der "Supabase" Platform und dient hier zur Referenz.
 Autor:          Alexander Benedikt Breitner
+Initiales Datum:       16.02.2024
+Letzte Änderung:    01.07.2024 - Korrekturen
+Version:        1.6
 **
 */
 

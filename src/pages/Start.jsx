@@ -6,8 +6,8 @@ import { useSingleSubmit } from "../lib/hooks/useSingleSubmit"
 import { useState } from "react"
 
 export default function Start() {
-    //const STUDY_GROUP = "dark"
-    const STUDY_GROUP = "nudge"
+    const STUDY_GROUP = "dark"
+    //const STUDY_GROUP = "nudge"
     const DESIGN_STRATEGY = STUDY_GROUP === "dark" ? 1 : 2
 
     const navigate = useNavigate();

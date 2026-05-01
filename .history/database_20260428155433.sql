@@ -1,16 +1,3 @@
---------------------------------------------------------
-/*
-**
-Datei:          database.sql
-Projekt:        Bachelorarbeit
-Beschreibung:   Skript für eine Datenbank. Die echte Datanbank befindet sich auf der "Supabase" Plattform. Diese dient zur Referenz.
-Autor:          Alexander Benedikt Breitner
-**
-*/
-
-
---------------------------------------------------------
-
 DROP TABLE IF EXISTS response CASCADE;
 DROP TABLE IF EXISTS screen CASCADE;
 DROP TABLE IF EXISTS run CASCADE;
